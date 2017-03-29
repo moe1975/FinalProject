@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.moe.finalproject.R;
+import com.mohibhero.finalproject.HouseSettings;
 
 // Created by Moe Abed
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // replace null with our main application activity
-                Intent intent = new Intent(MainActivity.this, null);
+                Intent intent = new Intent(MainActivity.this, HouseSettings.class);
                 startActivity(intent);
             }
         });
