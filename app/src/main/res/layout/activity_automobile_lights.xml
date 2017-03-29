@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    tools:context="com.talal.finalproject.AutomobileLights">
+
+
+    <Switch
+        android:id="@+id/high_beam"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/front_light"
+        android:layout_toEndOf="@+id/imageView2"
+        android:checked="false"
+        android:showText="true"
+        android:textColorLink="@android:color/holo_green_light"
+        android:textOff="High Beam OFF"
+        android:textOn="High Beam ON"
+        android:textSize="18sp"
+        tools:fontFamily="sans-serif"
+        tools:style="@android:style/Widget.Holo.Light.CompoundButton.Switch"
+        tools:textColorLink="@android:color/black" />
+
+    <Switch
+        android:id="@+id/front_light"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:checked="false"
+        android:showText="true"
+        android:textColorLink="@android:color/holo_green_light"
+        android:textOff="Low Beam OFF"
+        android:textOn="Low Beam ON"
+        android:textSize="18sp"
+        tools:fontFamily="sans-serif"
+        tools:style="@android:style/Widget.Holo.Light.CompoundButton.Switch"
+        tools:textColorLink="@android:color/black" />
+
+    <Switch
+        android:id="@+id/fog_light"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/high_beam"
+        android:layout_toEndOf="@+id/imageView2"
+        android:showText="true"
+        android:textColorLink="@android:color/holo_green_light"
+        android:textOff="Fog Light OFF"
+        android:textOn="Fog Light ON"
+        android:textSize="18sp"
+        tools:fontFamily="sans-serif"
+        tools:style="@android:style/Widget.Holo.Light.CompoundButton.Switch"
+        tools:textColorLink="@android:color/black" />
+
+    <SeekBar
+        android:id="@+id/interior_L"
+        style="@android:style/Widget.DeviceDefault.SeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="81dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/fog_light"
+        android:layout_toEndOf="@+id/imageView2"
+        android:max="10"
+        android:text="Interior Lights" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/front_light"
+        app:srcCompat="@drawable/low_beam"
+        android:layout_above="@+id/high_beam" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/front_light"
+        app:srcCompat="@drawable/high_beam"
+        android:layout_below="@+id/imageView"
+        android:layout_above="@+id/fog_light" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/foglight"
+        android:layout_below="@+id/high_beam"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/front_light" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/interior_light"
+        android:layout_below="@+id/imageView3"
+        android:layout_toStartOf="@+id/front_light"
+        android:layout_alignBottom="@+id/interior_L" />
+
+
+</RelativeLayout>

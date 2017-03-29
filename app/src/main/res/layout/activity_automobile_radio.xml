@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="@drawable/radio3"
+
+    tools:context="com.talal.finalproject.AutomobileRadio">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <Button
+            android:id="@+id/RadioCH1"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="136dp"
+            android:layout_marginStart="60dp"
+            android:background="@drawable/empty" />
+
+        <Button
+            android:id="@+id/RadioCH2"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_alignStart="@+id/RadioCH1"
+            android:layout_alignTop="@+id/RadioCH1"
+            android:layout_marginTop="37dp"
+            android:background="@drawable/empty" />
+
+        <Button
+            android:id="@+id/RadioCH3"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:background="@drawable/empty"
+            android:layout_alignBaseline="@+id/RadioCH1"
+            android:layout_alignBottom="@+id/RadioCH1"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/RadioCH4"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:background="@drawable/empty"
+            android:layout_alignBaseline="@+id/RadioCH2"
+            android:layout_alignBottom="@+id/RadioCH2"
+            android:layout_alignStart="@+id/RadioCH3" />
+
+        <Button
+            android:id="@+id/RadioCH5"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_alignBaseline="@+id/RadioCH1"
+            android:layout_alignBottom="@+id/RadioCH1"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/RadioCH3"
+            android:background="@drawable/empty" />
+
+        <Button
+            android:id="@+id/RadioCH6"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_alignBaseline="@+id/RadioCH2"
+            android:layout_alignBottom="@+id/RadioCH2"
+            android:layout_alignStart="@+id/RadioCH5"
+            android:background="@drawable/empty" />
+
+        <TextView
+            android:id="@+id/RadioInsertFreq"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/RadioCH3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/black"
+            android:hint="Insert Frequency"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/RadioInsert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/RadioInsertFreq"
+            android:layout_centerHorizontal="true"
+            android:text="Insert Frequency" />
+
+        <TextView
+            android:id="@+id/RadioShowFreq"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/RadioInsert"
+            android:layout_alignEnd="@+id/RadioCH5"
+            android:layout_marginBottom="18dp"
+            android:fontFamily="monospace"
+            android:text="99.9"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/SaveChannel"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/RadioInsertFreq"
+            android:layout_alignEnd="@+id/RadioCH5"
+            android:background="@android:drawable/bottom_bar"
+            android:text="Save"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/EditChannel"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/RadioInsertFreq"
+            android:layout_alignStart="@+id/RadioShowFreq"
+            android:background="@android:drawable/bottom_bar"
+            android:text="Edit"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/RadioGPS"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/EditChannel"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/empty" />
+    </RelativeLayout>
+
+
+</LinearLayout>

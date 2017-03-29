@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.talal.finalproject.MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/LivingRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Living Room" />
+
+    <Button
+        android:id="@+id/Kitchen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kitchen" />
+
+    <Button
+        android:id="@+id/Home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home" />
+
+    <Button
+        android:id="@+id/Automobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Automobile" />
+</LinearLayout>
