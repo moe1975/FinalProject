@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 
+import com.example.moe.finalproject.R;
 
 
 public class GarageDoor extends AppCompatActivity {

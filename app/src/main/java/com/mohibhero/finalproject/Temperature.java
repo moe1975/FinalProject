@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.moe.finalproject.R;
+
 public class Temperature extends BaseActivity {
     private ImageView imageView;
     private TextView textView;
