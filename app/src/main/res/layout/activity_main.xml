@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.moe.finalproject.com.moe.finalproject.MainActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <Button
+        android:id="@+id/LivingRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Living Room"
+        android:textColor="@color/colorPrimary"
+        android:layout_weight="0.19" />
+
+    <Button
+        android:id="@+id/Home"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Home"
+        android:textColor="@color/colorAccent"
+        android:layout_weight="0.14" />
+
+    <Button
+        android:id="@+id/Automobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Automobile"
+        android:layout_weight="0.18" />
+
+    <Button
+        android:id="@+id/Kitchen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="Kitchen"
+        android:layout_weight="0.17" />
+</LinearLayout>
