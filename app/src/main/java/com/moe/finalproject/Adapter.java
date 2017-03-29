@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by Moe on 2017-03-22..
+ * Created by Moe on 2017-03-22...
  */
 
 public class Adapter extends AppCompatActivity {
