@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Final Project</string>
+    <string name="appThree">House Settings</string>
+    <string name = "garage_light">Garage Light</string>
+    <string name = "garagedoor_openner">Garage Door</string>
+    <string name = "light_on">On</string>
+    <string name = "light_off">off</string>
+    <string name = "door_open">Open</string>
+    <string name = "door_close">Close</string>
+    <string name="currentTempText">Current Temperature</string>
+    <string name="minTempText">Minimum Temperature</string>
+    <string name="maxTempText">Maximum Temperature</string>
 </resources>
