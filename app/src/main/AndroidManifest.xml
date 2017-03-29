@@ -20,6 +20,10 @@
         <activity android:name="com.moe.finalproject.TV" />
         <activity android:name="com.moe.finalproject.Lamps" />
         <activity android:name="com.moe.finalproject.Blinding" />
+        <activity android:name="com.mohibhero.finalproject.HouseSettings"></activity>
+        <activity android:name="com.mohibhero.finalproject.GarageDoor"></activity>
+        <activity android:name="com.mohibhero.finalproject.Temperature"></activity>
+        <activity android:name="com.mohibhero.finalproject.WeatherForecast"></activity>
     </application>
 
 
