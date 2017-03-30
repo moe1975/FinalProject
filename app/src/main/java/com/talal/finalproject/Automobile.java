@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-
+//
 public class Automobile extends com.talal.finalproject.Adapter {
 
     final ArrayList<AutomobileData> automobileArray = new ArrayList<>();
