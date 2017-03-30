@@ -13,6 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.example.moe.finalproject.R;
+
 import java.util.ArrayList;
 
 public class Kitchen extends Adapter {
