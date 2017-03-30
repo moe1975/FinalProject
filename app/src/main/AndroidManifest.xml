@@ -29,5 +29,5 @@
         <activity android:name="com.emad.finalproject.KitchenFridge" />
         <activity android:name="com.emad.finalproject.KitchenMicrowave"></activity>
     </application>
-    
+
 </manifest>

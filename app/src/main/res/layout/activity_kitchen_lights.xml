@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.emad.finalproject.KitchenLights">
+
+
+    <CheckBox
+        android:id="@+id/KitchenMainLight"
+        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/kitchen_light"
+        android:layout_marginBottom="160dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/LighttextViewKit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/KitchenMainLight"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="58dp"
+        android:text="@string/turn_lights_on_off" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/light"
+        android:layout_above="@+id/LighttextViewKit"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:contentDescription="" />
+
+    <SeekBar
+        android:id="@+id/KitcheLightDimmable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/LighttextViewKit"
+        android:layout_marginTop="64dp"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
