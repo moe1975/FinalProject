@@ -3,6 +3,8 @@ package com.emad.finalproject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.moe.finalproject.R;
+
 public class KitchenLights extends AppCompatActivity {
 
     @Override
