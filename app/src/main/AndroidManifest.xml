@@ -25,9 +25,9 @@
         <activity android:name="com.mohibhero.finalproject.GarageDoor"></activity>
         <activity android:name="com.mohibhero.finalproject.Temperature"></activity>
         <activity android:name="com.mohibhero.finalproject.WeatherForecast"></activity>
+        <activity android:name="com.emad.finalproject.Kitchen" />
+        <activity android:name="com.emad.finalproject.KitchenFridge" />
+        <activity android:name="com.emad.finalproject.KitchenMicrowave"></activity>
     </application>
-
-
-
 
 </manifest>

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.emad.finalproject.Kitchen;
 import com.example.moe.finalproject.R;
 import com.mohibhero.finalproject.HouseSettings;
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Kitchen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, null);
+                Intent intent = new Intent(MainActivity.this, com.emad.finalproject.Kitchen.class);
                 startActivity(intent);
             }
         });
