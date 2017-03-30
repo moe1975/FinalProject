@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+// yes
 import com.example.moe.finalproject.R;
 
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.emad.finalproject.KitchenFridge">
+
+
+    <EditText
+        android:id="@+id/Fridge_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="58dp"
+        android:layout_toEndOf="@+id/FreezerImage"
+        android:ems="10"
+        android:hint="@string/enter_fridge_temperature"
+        android:inputType="numberSigned" />
+
+    <TextView
+        android:id="@+id/fridgeTempText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/Fridge_text"
+        android:layout_toEndOf="@+id/FreezerImage"
+        android:text=""
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/submit_fg_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_fridge_temperature"
+        android:layout_below="@+id/fridgeTempText"
+        android:layout_toEndOf="@+id/FridgeImage" />
+
+    <EditText
+        android:id="@+id/Freezer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/enter_freezer_temperature"
+        android:inputType="numberSigned"
+        android:layout_above="@+id/freezerTempText"
+        android:layout_alignEnd="@+id/submit_fg_temp"
+        android:layout_toEndOf="@+id/FridgeImage" />
+
+    <TextView
+        android:id="@+id/freezerTempText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/FridgeImage"
+        android:layout_toEndOf="@+id/FridgeImage"
+        android:text=""
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/submit_fz_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Freezer_text"
+        android:layout_below="@+id/freezerTempText"
+        android:layout_marginTop="28dp"
+        android:text="@string/submit_freezer_temperature" />
+
+    <ImageView
+        android:id="@+id/FreezerImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@+id/Fridge_text"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@drawable/temp_f"
+        android:contentDescription="" />
+
+    <ImageView
+        android:id="@+id/FridgeImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/freezer"
+        android:layout_below="@+id/submit_fg_temp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+</RelativeLayout>
