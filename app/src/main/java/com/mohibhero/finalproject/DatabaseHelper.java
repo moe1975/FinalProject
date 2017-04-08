@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class ProjectDatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     /* Database name and version number */
     private static final String DATABASE_NAME = "project.db";
@@ -24,7 +24,7 @@ public class ProjectDatabaseHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement, " + COLUMN_OTHER
             + " text not null);";
 
-    public ProjectDatabaseHelper(Context ctx) {
+    public DatabaseHelper(Context ctx) {
         super(ctx, DATABASE_NAME, null, VERSION_NUM);
     }
 
@@ -37,12 +37,12 @@ public class ProjectDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.w(ProjectDatabaseHelper.class.getName(),
+        Log.w(DatabaseHelper.class.getName(),
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy all old data");
         db.execSQL("DROP TABLE IF EXISTS messages");
         onCreate(db);
 
-        Log.i("ProjectDatabaseHelper", "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
+        Log.i("DatabaseHelper", "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
     }
 }
