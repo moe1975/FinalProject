@@ -11,6 +11,14 @@
     <string name="currentTempText">Current Temperature</string>
     <string name="minTempText">Minimum Temperature</string>
     <string name="maxTempText">Maximum Temperature</string>
+    <string name="messageHere">Temperature Here</string>
+    <string name="idHere">ID=</string>
+    <string name="deleteThisMessage">DELETE THIS MESSAGE</string>
+    <string name="currentTemperature">TextView</string>
+    <string name="minimumTemperature">TextView</string>
+    <string name="maximumTemperature">TextView</string>
+
+
 
     <!-- kitchen work -->
     <string name="enter_fridge_temperature">Enter Fridge Temperature</string>

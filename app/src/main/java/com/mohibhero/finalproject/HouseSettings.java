@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +23,12 @@ import java.util.ArrayList;
 
 public class HouseSettings extends BaseActivity {
 
+
     private ListView HouseListView;
     private ArrayList<HouseDataBase> ItemsInHouse;
     private HouseAdapter HouseAdapter;
+
+
 
     private SQLiteDatabase db;
 
@@ -38,6 +43,7 @@ public class HouseSettings extends BaseActivity {
         ItemsInHouse = new ArrayList<>();
 
         HouseListView = (ListView) findViewById(R.id.houseItems);
+final boolean isTablet = findViewById(R.id.houseFrame)!= null;
 
         db = getDbHelper().getWritableDatabase();
 
@@ -45,9 +51,9 @@ public class HouseSettings extends BaseActivity {
 
         HouseListView.setAdapter(HouseAdapter);
 
-        ItemsInHouse.add(new HouseDataBase(0, "GarageDoor", "@drawable/garage"));
+        ItemsInHouse.add(new HouseDataBase(0, "GarageFragment", "@drawable/garage"));
         ItemsInHouse.add(new HouseDataBase(1, "Temprature", "@drawable/temperature"));
-        ItemsInHouse.add(new HouseDataBase(2, "WeatherForecast", "@drawable/summer"));
+        ItemsInHouse.add(new HouseDataBase(2, "WeatherForecastFragment", "@drawable/summer"));
 
         HouseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
@@ -61,15 +67,38 @@ public class HouseSettings extends BaseActivity {
 
                 Intent intent = null;
 
-                if (position == 0)
-                    intent = new Intent(HouseSettings.this, GarageDoor.class);
-                else if (position == 1)
-                    intent = new Intent(HouseSettings.this, Temperature.class);
-                else if (position == 2)
-                    intent = new Intent(HouseSettings.this, WeatherForecast.class);
 
-                intent.putExtras(data);
-                startActivity(intent);
+                if(!isTablet) {
+                    if (position == 0)
+                        intent = new Intent(HouseSettings.this, GarageDetails.class);
+
+                    else if (position == 1)
+                        intent = new Intent(HouseSettings.this, TemperatureDetails.class);
+                    else if (position == 2)
+                        intent = new Intent(HouseSettings.this, WeatherForecastDetails.class);
+
+
+                    intent.putExtras(data);
+                    startActivity(intent);
+                }
+                else{
+                    Fragment f = null;
+                    if (position == 0)
+                        f = new GarageFragment();
+
+                   else if (position == 1)
+                       f = new TemperatureFragment();
+                    else if (position == 2)
+                        f = new WeatherForecastFragment();
+
+
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+
+                    ft.replace(R.id.houseFrame, f);
+                    ft.commit();
+                }
+
             }
         });
     }

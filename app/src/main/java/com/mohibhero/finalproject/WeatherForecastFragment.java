@@ -5,14 +5,21 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Xml;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import com.example.moe.finalproject.R;
 
@@ -24,11 +31,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 
 
-public class WeatherForecast extends AppCompatActivity {
+public class WeatherForecastFragment extends Fragment {
 
     private ForecastQuery forecastQuery;
 
@@ -41,21 +49,26 @@ public class WeatherForecast extends AppCompatActivity {
     private ImageView weatherStatus;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        setContentView(R.layout.activity_weather_forecast);
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.activity_weather_forecast_fragment, container, false);
 
-        progressWeatherBar = (ProgressBar) findViewById(R.id.progressWeatherBar);
+        Bundle data = this.getArguments();
 
-        currentTemperature = (TextView) findViewById(R.id.currentTemperature);
-        minimumTemperature = (TextView) findViewById(R.id.minimumTemperature);
-        maximumTemperature = (TextView) findViewById(R.id.maximumTemperature);
+        progressWeatherBar = (ProgressBar) v.findViewById(R.id.progressWeatherBar);
 
-        weatherStatus = (ImageView) findViewById(R.id.weatherImage);
+        currentTemperature = (TextView) v.findViewById(R.id.currentTemperature);
+        minimumTemperature = (TextView) v.findViewById(R.id.minimumTemperature);
+        maximumTemperature = (TextView) v.findViewById(R.id.maximumTemperature);
+
+        weatherStatus = (ImageView) v.findViewById(R.id.weatherImage);
 
         forecastQuery = new ForecastQuery();
         forecastQuery.execute();
+
+        return v;
     }
 
     private class ForecastQuery extends AsyncTask<String, Integer, String> {
@@ -70,7 +83,7 @@ public class WeatherForecast extends AppCompatActivity {
         // private static final String OttawaWeatherURL = "http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=d99666875e0e51521f0040a3d97d0f6a&mode=xml&units=metric";
 
         private boolean fileExists(String fileName){
-            File file = getBaseContext().getFileStreamPath(fileName);
+            File file = getActivity().getBaseContext().getFileStreamPath(fileName);
             return file.exists();
         }
 
@@ -102,7 +115,7 @@ public class WeatherForecast extends AppCompatActivity {
             if(fileExists(iconFileName)) {
                 Log.i("Info", iconFileName + " was found");
                 try {
-                    File f = getFileStreamPath(iconFileName);
+                    File f = getActivity().getFileStreamPath(iconFileName);
                     fis = new FileInputStream(f);
                     weatherImage = BitmapFactory.decodeStream(fis);
                 }
@@ -163,7 +176,7 @@ public class WeatherForecast extends AppCompatActivity {
             Bitmap image = HTTPUtils.getImage(imageUrl);
             FileOutputStream outputStream;
             try {
-                outputStream = openFileOutput( iconFileName, Context.MODE_PRIVATE);
+                outputStream = getActivity().openFileOutput( iconFileName, Context.MODE_PRIVATE);
                 if(image != null)
                     image.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
 
@@ -173,6 +186,36 @@ public class WeatherForecast extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            return null;
+        }
+    }
+}
+
+
+class HTTPUtils {
+    public static Bitmap getImage(URL url) {
+        HttpURLConnection connectionURL = null;
+        try {
+            connectionURL = (HttpURLConnection) url.openConnection();
+            connectionURL.connect();
+            int responseCode = connectionURL.getResponseCode();
+            if (responseCode == 200) {
+                return BitmapFactory.decodeStream(connectionURL.getInputStream());
+            } else
+                return null;
+        } catch (Exception e) {
+            return null;
+        } finally {
+            if (connectionURL != null) {
+                connectionURL.disconnect();
+            }
+        }
+    }
+    public static Bitmap getImage(String urlString) {
+        try {
+            URL url = new URL(urlString);
+            return getImage(url);
+        } catch (MalformedURLException e) {
             return null;
         }
     }

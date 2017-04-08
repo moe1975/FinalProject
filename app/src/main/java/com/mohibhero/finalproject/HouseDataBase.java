@@ -8,10 +8,12 @@ public class HouseDataBase {
     private String title;
     private String imageUri;
 
+
     public HouseDataBase() {
         this._id = 0;
         this.title = "";
         this.imageUri = "";
+
     }
 
     public HouseDataBase(int _id, String title, String imageUri) {
@@ -43,4 +45,6 @@ public class HouseDataBase {
     public void setImageUri(String imageUri) {
         this.imageUri = imageUri;
     }
+
+
 }

@@ -8,7 +8,15 @@
 
     <ListView
         android:id="@+id/houseItems"
+        android:layout_width="300dp"
+        android:layout_height="420dp"
+        />
+
+    <FrameLayout
+        android:id="@+id/houseFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </LinearLayout>

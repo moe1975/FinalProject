@@ -22,9 +22,10 @@
         <activity android:name="com.moe.finalproject.Lamps" />
         <activity android:name="com.moe.finalproject.Blinding" />
         <activity android:name="com.mohibhero.finalproject.HouseSettings"></activity>
-        <activity android:name="com.mohibhero.finalproject.GarageDoor"></activity>
-        <activity android:name="com.mohibhero.finalproject.Temperature"></activity>
-        <activity android:name="com.mohibhero.finalproject.WeatherForecast"></activity>
+        <activity android:name="com.mohibhero.finalproject.GarageDetails"></activity>
+
+        <activity android:name="com.mohibhero.finalproject.TemperatureDetails"></activity>
+        <activity android:name="com.mohibhero.finalproject.WeatherForecastDetails"></activity>
         <activity android:name="com.emad.finalproject.Kitchen" />
         <activity android:name="com.emad.finalproject.KitchenFridge" />
         <activity android:name="com.emad.finalproject.KitchenMicrowave"></activity>
