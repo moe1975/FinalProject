@@ -22,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LivingRoom = (Button) findViewById(R.id.LivingRoom);
+
+
+       LivingRoom = (Button) findViewById(R.id.LivingRoom);
         LivingRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // replace null with our main application activity
-                Intent intent = new Intent(MainActivity.this,LivingRoom.class);
-                startActivity(intent);
+                Intent mainIntent = new Intent(MainActivity.this,LivingRoom.class);
+                startActivity(mainIntent);
             }
         });
 
@@ -36,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         Kitchen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.emad.finalproject.Kitchen.class);
-                startActivity(intent);
+                Intent mainIntent = new Intent(MainActivity.this, com.emad.finalproject.Kitchen.class);
+                startActivity(mainIntent);
             }
         });
 
@@ -45,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // replace null with our main application activity
-                Intent intent = new Intent(MainActivity.this, HouseSettings.class);
-                startActivity(intent);
+                Intent mainIntent = new Intent(MainActivity.this, HouseSettings.class);
+                startActivity(mainIntent);
             }
         });
 
@@ -55,11 +55,12 @@ public class MainActivity extends AppCompatActivity {
         Automobile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // replace null with our main application activity
-                Intent intent = new Intent(MainActivity.this, null);
-                startActivity(intent);
+                Intent mainIntent = new Intent(MainActivity.this, null);
+                startActivity(mainIntent);
             }
         });
 
     }
+
+
 }

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Final Project</string>
+
+    <string name="appThree">ضبط المنزل</string>
+    <string name = "garage_light">انارة الطراج</string>
+    <string name = "garagedoor_openner">باب الكراج</string>
+    <string name = "light_on">فتح</string>
+    <string name = "light_off">غلق</string>
+    <string name = "door_open">فتح</string>
+    <string name = "door_close">غلق</string>
+    <string name="currentTempText">درجة الحرارة الان</string>
+    <string name="minTempText">الدرجه الصغرى</string>
+    <string name="maxTempText">الدرجه العليا</string>
+
+    <!-- kitchen work -->
+    <string name="enter_fridge_temperature">ادخل درجة حرارة الفرن</string>
+    <string name="enter_freezer_temperature">ادخل درجة حرارة المبرد</string>
+    <string name="submit_freezer_temperature">احفظ درجة جرارة المبرد</string>
+    <string name="submit_fridge_temperature">احفظ درجة حرارة الثلاجه</string>
+    <string name="kitchen_light">ضوؤ المطبخ</string>
+    <string name="turn_lights_on_off">الضوؤ/فتح\اغلاق</string>
+
+    <string name="main_dialog_help">Mohamed</string>
+</resources>

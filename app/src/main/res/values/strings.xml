@@ -19,4 +19,6 @@
     <string name="submit_fridge_temperature">Submit Fridge Temperature</string>
     <string name="kitchen_light">kitchen light</string>
     <string name="turn_lights_on_off">Turn light on/off</string>
+
+    <string name="main_dialog_help">Mohamed</string>
 </resources>

@@ -16,6 +16,7 @@ public class RoomData {
     public static final int item_Light2 = 2;
     public static final int item_Light3 = 3;
     public static final int item_Blinding = 4;
+    private int deviceType;
 
 
     public RoomData() {
@@ -24,10 +25,11 @@ public class RoomData {
         this.image = "";
     }
 
-    public RoomData(int _id, String title, String image) {
+    public RoomData(int _id, String title, String image, int deviceType) {
         this._id = _id;
         this.title = title;
         this.image = image;
+        this.deviceType = deviceType;
     }
 
     public int get_id() {
@@ -53,5 +55,9 @@ public class RoomData {
 
     public void setImageUri(String imageUri) {
         this.image = imageUri;
+    }
+
+    public int getDeviceType() {
+        return deviceType;
     }
 }
