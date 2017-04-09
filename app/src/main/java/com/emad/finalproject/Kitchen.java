@@ -35,9 +35,9 @@ public class Kitchen extends Adapter {
         kitchenAdapter = new KitchenAdapter(this);
         listViewKitchen.setAdapter(kitchenAdapter);
 
-        kitchenArray.add(new KitchenData(0, "Front Lights", "@drawable/light"));
-        kitchenArray.add(new KitchenData(1, "Fridge Lights", "@drawable/fridge"));
-        kitchenArray.add(new KitchenData(2, "Microwave Lights", "@drawable/microwave"));
+        kitchenArray.add(new KitchenData(0, "Front Light1", "@drawable/light"));
+        kitchenArray.add(new KitchenData(1, "Fridge Light1", "@drawable/fridge"));
+        kitchenArray.add(new KitchenData(2, "Microwave Light1", "@drawable/microwave"));
         kitchenAdapter.notifyDataSetChanged();
 
         listViewKitchen.setOnItemClickListener(new AdapterView.OnItemClickListener() {

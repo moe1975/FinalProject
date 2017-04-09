@@ -5,35 +5,47 @@ package com.moe.finalproject;
  */
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 // yes
 import com.example.moe.finalproject.R;
 
 
-public class Blinding extends Adapter {
+public class Blinding extends Fragment {
     private ImageView image;
     private TextView blindingText;
+    private ProgressBar progressBar;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        setContentView(R.layout.activity_blinding);
+        final Bundle data = this.getArguments();
 
-        getSupportActionBar().setTitle("House Blindings");
-
-        final Bundle data = this.getIntent().getExtras();
+        View v = inflater.inflate(R.layout.activity_blinding, container, false);
 
 
-        image = (ImageView) findViewById(R.id.blindingImage);
+        //getSupportActionBar().setTitle("House Blindings");
 
-        image.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), getResources().getIdentifier(data.getString("itemImage"), null, getPackageName())));
+//        final Bundle data = this.getIntent().getExtras();
 
-        blindingText = (TextView) findViewById(R.id.blindingText);
+        progressBar = (ProgressBar) v.findViewById(R.id.progressLivingroomBar);
+        progressBar.setVisibility(View.VISIBLE);
+        image = (ImageView) v.findViewById(R.id.blindingImage);
+
+        image.setImageDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), getResources().getIdentifier(data.getString("itemImage"), null, getActivity().getPackageName())));
+
+        blindingText = (TextView) v.findViewById(R.id.blindingText);
 
         blindingText.setText("ID: " + data.getString("id"));
 
+        return v;
     }
 }

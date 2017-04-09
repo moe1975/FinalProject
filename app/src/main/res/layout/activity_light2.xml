@@ -9,7 +9,7 @@
         android:id="@+id/lampsImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/blind" />
+        app:srcCompat="@drawable/lamp" />
 
     <TextView
         android:id="@+id/lampsText"
@@ -24,6 +24,12 @@
         android:id="@+id/switchLamp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TURN LAMP ON" />
+        android:text="TURN LIGHT ON" />
+
+    <Button
+        android:id="@+id/quitLightButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quit Light App" />
 
 </LinearLayout>

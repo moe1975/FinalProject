@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.emad.finalproject.Kitchen;
 import com.example.moe.finalproject.R;
 import com.mohibhero.finalproject.HouseSettings;
 

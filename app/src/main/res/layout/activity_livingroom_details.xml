@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.moe.finalproject.LivingRoom">
 
-    <ListView
-        android:id="@+id/roomItems"
+    <FrameLayout
+        android:id="@+id/emptyFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-
-
+    </FrameLayout>
 </RelativeLayout>

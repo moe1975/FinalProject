@@ -11,21 +11,32 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    /* Database name and version number */
     private static final String DATABASE_NAME = "project.db";
     private static final int VERSION_NUM = 1;
 
-    /* Living Room Table and Column Names */
-    public static final String TABLE_ROOM_ITEMS = "roomItems";
+    //living room
+    public static final String TABLE_LIVING_ROOM_ITEMS = "roomItems";
+    public static final String COLUMN_LIVING_ROOM_ID = "_id";
+    public static final String COLUMN_LIVING_ROOM_DEVICE_TYPE = "deviceType";
+    public static final String COLUMN_LIVING_ROOM_DEVICE_TITLE = "deviceTitle";
+    public static final String COLUMN_LIVING_ROOM_DEVICE_IMAGE = "deviceImage";
+    public static final String COLUMN_LIVING_ROOM_LAST_VISITED = "lastVisited";
+    public static final String COLUMN_LIVING_ROOM_CREATED = "created";
 
-    public static final String COLUMN_ROOM_ID = "_id";
-    public static final String COLUMN_OTHER = "other";
+
+
 
     // Database creation sql statement
-    private static final String CREATE_ROOM_ITEMS_TABLE = "create table "
-            + TABLE_ROOM_ITEMS + "( " + COLUMN_ROOM_ID
-            + " integer primary key autoincrement, " + COLUMN_OTHER
-            + " text not null);";
+    private static final String CREATE_LIVING_ROOM_ITEMS_TABLE = "create table "
+            + TABLE_LIVING_ROOM_ITEMS + "( "
+            + COLUMN_LIVING_ROOM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + COLUMN_LIVING_ROOM_DEVICE_TYPE + " int not null default 0, "
+            + COLUMN_LIVING_ROOM_DEVICE_TITLE + " text not null, "
+            + COLUMN_LIVING_ROOM_DEVICE_IMAGE + " text not null, "
+            + COLUMN_LIVING_ROOM_LAST_VISITED + " INTEGER, "
+            + COLUMN_LIVING_ROOM_CREATED + " INTEGER);";
+
+
 
     public DatabaseHelper(Context ctx) {
         super(ctx, DATABASE_NAME, null, VERSION_NUM);
@@ -33,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_ROOM_ITEMS_TABLE);
+        db.execSQL(CREATE_LIVING_ROOM_ITEMS_TABLE);
 
         Log.i("ChatDatabaseHelper", "Calling onCreate");
     }
@@ -44,8 +55,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy all old data");
         db.execSQL("DROP TABLE IF EXISTS messages");
+        db.execSQL("drop table if exists"+TABLE_LIVING_ROOM_ITEMS);
         onCreate(db);
 
-        Log.i("ProjectDatabaseHelper", "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
+        Log.i("DatabaseHelper", "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
     }
 }

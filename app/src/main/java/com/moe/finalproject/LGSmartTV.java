@@ -4,7 +4,7 @@ package com.moe.finalproject;
  * Created by Moe on 2017-03-22.
  */
 
-public class LGSmartTV {
+public class LGSmartTV  {
 
     private long id;
     private String Tv_Model;

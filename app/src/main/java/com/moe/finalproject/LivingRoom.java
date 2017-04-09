@@ -4,35 +4,50 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
 import com.example.moe.finalproject.R;
+import com.mohibhero.finalproject.ProjectDatabaseHelper;
 
 import java.util.ArrayList;
 
-public class LivingRoom extends Adapter {
+public class LivingRoom extends BaseActivity {
 
     private ListView roomList;
     private ArrayList<RoomData> roomItems;
     private RoomAdapter roomAdapter;
 
     private SQLiteDatabase db;
+
+    private String[] allColumns = { ProjectDatabaseHelper.COLUMN_ROOM_ID,
+            DatabaseHelper.COLUMN_LIVING_ROOM_DEVICE_TITLE, DatabaseHelper.COLUMN_LIVING_ROOM_DEVICE_IMAGE,
+            DatabaseHelper.COLUMN_LIVING_ROOM_DEVICE_TYPE,
+            DatabaseHelper.COLUMN_LIVING_ROOM_LAST_VISITED, DatabaseHelper.COLUMN_LIVING_ROOM_CREATED};
+    private boolean isFrameLoaded;
+    private FrameLayout livingRoomFrame;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_living_room);
-
         getSupportActionBar().setTitle("Living Room");
+
+
+
+        final boolean isTablet = findViewById(R.id.livingRoomFrame) != null;
 
         roomItems = new ArrayList<>();
 
@@ -45,8 +60,10 @@ public class LivingRoom extends Adapter {
         roomList.setAdapter(roomAdapter);
 
         roomItems.add(new RoomData(0, "TV", "@drawable/tv"));
-        roomItems.add(new RoomData(1, "Lamps", "@drawable/lamp"));
-        roomItems.add(new RoomData(2, "Blinding", "@drawable/blind"));
+        roomItems.add(new RoomData(1, "Light1", "@drawable/lamp"));
+        roomItems.add(new RoomData(2, "Light2", "@drawable/lamp"));
+        roomItems.add(new RoomData(3, "Light3", "@drawable/lamp"));
+        roomItems.add(new RoomData(4, "Blinding", "@drawable/blind"));
 
         roomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
@@ -59,16 +76,37 @@ public class LivingRoom extends Adapter {
                 data.putString("itemImage", roomItems.get(position).getImageUri());
 
                 Intent intent = null;
+if(!isTablet) {
+    if (position == 0)
+        intent = new Intent(LivingRoom.this, TVDetails.class);
+    else if (position == 1)
+        intent = new Intent(LivingRoom.this, LightDetails.class);
+    else if (position == 2)
+        intent = new Intent(LivingRoom.this, BlindingDetails.class);
 
-                if (position == 0)
-                    intent = new Intent(LivingRoom.this, TV.class);
-                else if (position == 1)
-                    intent = new Intent(LivingRoom.this, Lamps.class);
-                else if (position == 2)
-                    intent = new Intent(LivingRoom.this, Blinding.class);
+  intent.putExtras(data);
+    startActivity(intent);
+}
+else {
+    Fragment f = null;
+    if(position == 0)
+        f = new TVFragment();
+    else if(position == 1)
+        f = new Light1();
+    else if (position ==2)
+        f = new Light2();
+    else if (position ==3)
+        f = new Light3();
+    else if(position == 4)
+        f = new Blinding();
+    f.setArguments(data);
 
-                intent.putExtras(data);
-                startActivity(intent);
+    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+    ft.replace(R.id.livingRoomFrame, f);
+    ft.commit();
+
+}
+
             }
         });
 

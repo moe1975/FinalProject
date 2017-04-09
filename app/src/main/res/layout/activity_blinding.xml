@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
 
@@ -25,15 +26,26 @@
         android:id="@+id/Curtain1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="Open Curtain" />
+        android:text="Open "
+        android:textColor="@color/colorPrimaryDark" />
 
     <Button
         android:id="@+id/Curtain2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:text="Close Curtain" />
+        android:text="Close "
+        android:textColor="@color/colorPrimary" />
+
+    <ProgressBar
+        android:id="@+id/progressLivingroomBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+    </ProgressBar>
 
 
 </LinearLayout>
