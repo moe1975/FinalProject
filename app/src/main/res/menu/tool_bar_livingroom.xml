@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item android:id="@+id/action_one"
+        android:title="Home"
+        android:icon="@drawable/light"
+        android:orderInCategory="101"
+        app:showAsAction="always"
+        />
+
+    <item android:id="@+id/action_two"
+        android:title="Camera"
+        android:icon="@drawable/tv"
+        android:orderInCategory="101"
+        app:showAsAction="always"
+        />
+
+    <item android:id="@+id/action_three"
+        android:title="Folder"
+        android:icon="@drawable/blind"
+        android:orderInCategory="101"
+        app:showAsAction="always"
+        />
+
+    <item android:id="@+id/action_about"
+        android:title="About"
+        android:orderInCategory="101"
+        />
+</menu>
