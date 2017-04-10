@@ -25,15 +25,15 @@ public class RoomDetails extends BaseActivity {
 
         Fragment f = null;
 
-        if(itemType == RoomData.item_TV) {
+        if(itemType == RoomDataBase.item_TV) {
             f = new TVFragment();
-        } else if(itemType == RoomData.item_Light1) {
+        } else if(itemType == RoomDataBase.item_Light1) {
             f = new Light1();
-        } else if(itemType == RoomData.item_Light2) {
+        } else if(itemType == RoomDataBase.item_Light2) {
             f = new Light2();
-        } else if(itemType == RoomData.item_Light3) {
+        } else if(itemType == RoomDataBase.item_Light3) {
             f = new Light3();
-        } else if(itemType == RoomData.item_Blinding) {
+        } else if(itemType == RoomDataBase.item_Blinding) {
             f = new Blinding();
         }
 

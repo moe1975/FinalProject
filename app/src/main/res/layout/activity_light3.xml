@@ -2,19 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
 
     <ImageView
-        android:id="@+id/lampsImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/blind" />
+        android:id="@+id/lampImage"
+        android:layout_width="78dp"
+        android:layout_height="79dp"
+        app:srcCompat="@drawable/lamp" />
+
+    <ImageView
+        android:id="@+id/bluelightImage"
+        android:layout_width="76dp"
+        android:layout_height="61dp"
+        app:srcCompat="@drawable/bluelight" />
+
+    <ImageView
+        android:id="@+id/yellowlightImage"
+        android:layout_width="77dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/yellowlight" />
 
     <TextView
         android:id="@+id/lampsText"
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text=""
         android:textAlignment="center"
@@ -23,13 +36,27 @@
     <Button
         android:id="@+id/switchLamp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TURN LIGHT ON" />
+        android:layout_height="31dp"
+        android:text="TURN LIGHT ON"
+        android:layout_weight="0.04" />
 
     <Button
         android:id="@+id/quitLightButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quit Light App" />
+        android:layout_height="30dp"
+        android:text="Quit Light App"
+        android:layout_weight="0.07" />
+
+    <Button
+        android:id="@+id/bluelight"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:text="TURN LIGHT TO BLUE" />
+
+    <Button
+        android:id="@+id/yellowlight"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:text="TURN LIGHT TO YELLOW" />
 
 </LinearLayout>

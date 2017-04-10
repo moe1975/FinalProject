@@ -11,6 +11,11 @@
     <string name="currentTempText">Current Temperature</string>
     <string name="minTempText">Minimum Temperature</string>
     <string name="maxTempText">Maximum Temperature</string>
+    <string name="dialogTitle">title</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+    <string name="dialogMessage">Message</string>
+
 
     <!-- kitchen work -->
     <string name="enter_fridge_temperature">Enter Fridge Temperature</string>

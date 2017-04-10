@@ -27,17 +27,17 @@ public class LightDetails extends AppCompatActivity {
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
-        if(deviceType == RoomData.item_Light1) {
+        if(deviceType == RoomDataBase.item_Light1) {
             Light1 lg = new Light1();
             lg.setArguments(data);
             ft.replace(R.id.lightFrame, lg);
             ft.commit();
-        } else if(deviceType == RoomData.item_Light2) {
+        } else if(deviceType == RoomDataBase.item_Light2) {
             Light2 lg2 = new Light2();
             lg2.setArguments(data);
             ft.replace(R.id.lightFrame, lg2);
             ft.commit();
-        } else if(deviceType == RoomData.item_Light3) {
+        } else if(deviceType == RoomDataBase.item_Light3) {
             Light3 lg3 = new Light3();
             lg3.setArguments(data);
             ft.replace(R.id.lightFrame, lg3);

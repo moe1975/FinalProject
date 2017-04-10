@@ -8,14 +8,17 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.moe.finalproject.R;
 
@@ -24,27 +27,27 @@ import java.util.ArrayList;
 public class LivingRoom extends BaseActivity {
 
     private ListView roomList;
-    private ArrayList<RoomData> roomItems;
+    private ArrayList<RoomDataBase> roomItems;
     private RoomAdapter roomAdapter;
 
     private SQLiteDatabase db;
 
 
 
-   /* private String[] allColumns = { DatabaseHelper.COLUMN_ROOM_ID,
+   private String[] allColumns = { DatabaseHelper.COLUMN_LIVING_ROOM_CREATED,
 
             DatabaseHelper.COLUMN_LIVING_ROOM_DEVICE_TITLE, DatabaseHelper.COLUMN_LIVING_ROOM_DEVICE_IMAGE,
             DatabaseHelper.COLUMN_LIVING_ROOM_DEVICE_TYPE,
             DatabaseHelper.COLUMN_LIVING_ROOM_LAST_VISITED, DatabaseHelper.COLUMN_LIVING_ROOM_CREATED};
     private boolean isFrameLoaded;
-    private FrameLayout livingRoomFrame;*/
+    private FrameLayout livingRoomFrame;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_living_room);
-        getSupportActionBar().setTitle("Living Room");
+       // getSupportActionBar().setTitle("Living Room");
 
 
 
@@ -60,16 +63,16 @@ public class LivingRoom extends BaseActivity {
 
         roomList.setAdapter(roomAdapter);
 
-        roomItems.add(new RoomData(0, "TV", "@drawable/tv", RoomData.item_TV));
-        roomItems.add(new RoomData(1, "Light1", "@drawable/lamp", RoomData.item_Light1));
-        roomItems.add(new RoomData(2, "Light2", "@drawable/lamp", RoomData.item_Light2));
-        roomItems.add(new RoomData(3, "Light3", "@drawable/lamp", RoomData.item_Light3));
-        roomItems.add(new RoomData(4, "Blinding", "@drawable/blind", RoomData.item_Blinding));
+        roomItems.add(new RoomDataBase(0, "TV", "@drawable/tv", RoomDataBase.item_TV));
+        roomItems.add(new RoomDataBase(1, "Light1", "@drawable/lamp", RoomDataBase.item_Light1));
+        roomItems.add(new RoomDataBase(2, "Light2", "@drawable/lamp", RoomDataBase.item_Light2));
+        roomItems.add(new RoomDataBase(3, "Light3", "@drawable/lamp", RoomDataBase.item_Light3));
+        roomItems.add(new RoomDataBase(4, "Blinding", "@drawable/blind", RoomDataBase.item_Blinding));
 
         roomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
                 Object o = roomList.getItemAtPosition(position);
-                RoomData itemData = (RoomData) o;
+                RoomDataBase itemData = (RoomDataBase) o;
                 Bundle data = new Bundle();
 
                 data.putString("id", Long.toString(id));
@@ -120,7 +123,7 @@ else {
 
    
 
-    private class RoomAdapter extends ArrayAdapter<RoomData> {
+    private class RoomAdapter extends ArrayAdapter<RoomDataBase> {
 
         public RoomAdapter(Context context) {
             super(context, 0);
@@ -131,7 +134,7 @@ else {
         }
 
         public long getItemId(int position) { return roomItems.get(position).get_id();}
-        public RoomData getItem(int position) {
+        public RoomDataBase getItem(int position) {
             return roomItems.get(position);
         }
 
@@ -162,7 +165,12 @@ else {
         protected Object doInBackground(Object... params) {
 
             listItems();
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e)
+            {
 
+            }
             return null;
         }
 
@@ -171,7 +179,8 @@ else {
 
         @Override
         protected void onPostExecute(Object result) {
-
+            Log.d("Waited", "THree seconds later");
+            Toast.makeText( LivingRoom.this,"Hello", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.moe.finalproject.LivingRoom">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/activity_livingroom_toolbar"/>
+
+
     <FrameLayout
         android:id="@+id/emptyFrame"
         android:layout_width="match_parent"
