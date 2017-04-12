@@ -2,6 +2,8 @@ package com.emad.finalproject;
 
 /**
  * Created by Algo on 3/29/2017.
+ * just to create the database for the living room requirements
+ * still no database work for my kitchen use case
  */
 
 
@@ -30,6 +32,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             + " text not null);";
 
     public DataBaseHelper(Context ctx) {
+
         super(ctx, DATABASE_NAME, null, VERSION_NUM);
     }
 

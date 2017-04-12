@@ -5,20 +5,20 @@ package com.emad.finalproject;
  */
 
 
-public class KitchenData {
+public class KitchenDataModel {
 
 
     private long _id;
     private String text;
     private String uri;
 
-    public KitchenData() {
+    public KitchenDataModel() {
         _id = 0;
         text = "";
         uri = "";
     }
 
-    public KitchenData(long _id, String text, String uri) {
+    public KitchenDataModel(long _id, String text, String uri) {
         this._id = _id;
         this.text = text;
         this.uri = uri;
