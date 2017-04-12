@@ -19,6 +19,7 @@ public class ExampleInstrumentedTest {
     @Test
     // not used
     // not used
+    // not used
     public void useAppContext() throws Exception {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
