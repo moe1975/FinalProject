@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mohibhero.finalproject.GarageFragment"
-    android:background="@mipmap/ic_launcher">
+    android:background="@drawable/garagebackground">
 
     <TextView
         android:text="@string/garage_light"
