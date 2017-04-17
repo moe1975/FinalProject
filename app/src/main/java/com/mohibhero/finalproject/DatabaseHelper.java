@@ -22,7 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     /* Database name */
-    private static final String DATABASE_NAME = "project.db";
+    private static final String DATABASE_NAME = "project4.db";
 
     /* Version Number */
     private static final int VERSION_NUM = 1;
