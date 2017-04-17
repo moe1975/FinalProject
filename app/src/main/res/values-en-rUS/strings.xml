@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Final Project</string>
+
+
+
+
+    <!-- House Settings -->
+    <string name="appThree">house settings</string>
+    <string name = "garage_light">garage light</string>
+    <string name = "garagedoor_openner">garage door</string>
+    <string name = "light_on">on</string>
+    <string name = "light_off">off</string>
+    <string name = "door_open">open</string>
+    <string name = "door_close">close</string>
+    <string name="currentTempText">current temperature</string>
+    <string name="minTempText">minimum temperature</string>
+    <string name="maxTempText">maximum temperature</string>
+    <string name="messageHere">temperature here</string>
+    <string name="idHere">id=</string>
+    <string name="deleteThisMessage">delete this message</string>
+    <string name="currentTemperature">textview</string>
+    <string name="minimumTemperature">textview</string>
+    <string name="maximumTemperature">textview</string>
+
+
+
+    <!-- kitchen work -->
+    <string name="enter_fridge_temperature">enter fridge temperature</string>
+    <string name="enter_freezer_temperature">enter freezer temperature</string>
+    <string name="submit_freezer_temperature">submit freezer temperature</string>
+    <string name="submit_fridge_temperature">submit fridge temperature</string>
+    <string name="kitchen_light">kitchen light</string>
+    <string name="turn_lights_on_off">turn light on/off</string>
+</resources>

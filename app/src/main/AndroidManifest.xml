@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.moe.finalproject.MainActivity">
+        <activity android:name="com.moe.finalproject.MainActivity"
+                  android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,10 +22,14 @@
         <activity android:name="com.moe.finalproject.TV" />
         <activity android:name="com.moe.finalproject.Lamps" />
         <activity android:name="com.moe.finalproject.Blinding" />
-        <activity android:name="com.mohibhero.finalproject.HouseSettings"></activity>
-        <activity android:name="com.mohibhero.finalproject.GarageDoor"></activity>
-        <activity android:name="com.mohibhero.finalproject.Temperature"></activity>
-        <activity android:name="com.mohibhero.finalproject.WeatherForecast"></activity>
+        <activity android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name="com.mohibhero.finalproject.HouseSettings">
+
+        </activity>
+        <activity android:name="com.mohibhero.finalproject.GarageDetails"></activity>
+
+        <activity android:name="com.mohibhero.finalproject.TemperatureDetails"></activity>
+        <activity android:name="com.mohibhero.finalproject.WeatherForecastDetails"></activity>
         <activity android:name="com.emad.finalproject.Kitchen" />
         <activity android:name="com.emad.finalproject.KitchenFridge" />
         <activity android:name="com.emad.finalproject.KitchenMicrowave"></activity>

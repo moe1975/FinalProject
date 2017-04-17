@@ -4,10 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/ic_launcher">
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.Toolbar
+         android:id="@+id/house_toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/colorPrimary"
+         android:popupTheme="@color/colorPrimaryDark"/>
 
     <ListView
         android:id="@+id/houseItems"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent" />
+
 </LinearLayout>

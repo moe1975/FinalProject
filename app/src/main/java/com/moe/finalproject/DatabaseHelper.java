@@ -21,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ROOM_ID = "_id";
     public static final String COLUMN_OTHER = "other";
 
+
     // Database creation sql statement
     private static final String CREATE_ROOM_ITEMS_TABLE = "create table "
             + TABLE_ROOM_ITEMS + "( " + COLUMN_ROOM_ID
@@ -46,6 +47,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS messages");
         onCreate(db);
 
-        Log.i("ProjectDatabaseHelper", "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
+        Log.i("DatabaseHelper", "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
     }
 }
