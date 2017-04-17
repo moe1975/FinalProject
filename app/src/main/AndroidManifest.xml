@@ -21,13 +21,6 @@
         <activity android:name="com.moe.finalproject.LivingRoom" />
         <activity android:name="com.moe.finalproject.TVDetails" />
         <activity android:name="com.moe.finalproject.BlindingDetails" />
-        <activity android:name="com.mohibhero.finalproject.HouseSettings" />
-        <activity android:name="com.mohibhero.finalproject.GarageDoor" />
-        <activity android:name="com.mohibhero.finalproject.Temperature" />
-        <activity android:name="com.mohibhero.finalproject.WeatherForecast" />
-        <activity android:name="com.emad.finalproject.Kitchen" />
-        <activity android:name="com.emad.finalproject.KitchenFridge" />
-        <activity android:name="com.emad.finalproject.KitchenMicrowave" />
         <activity android:name="com.moe.finalproject.Light2Details" />
         <activity android:name="com.moe.finalproject.Light3Details" />
         <activity android:name="com.moe.finalproject.Light1Details"></activity>

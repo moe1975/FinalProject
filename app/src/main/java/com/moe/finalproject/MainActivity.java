@@ -13,9 +13,7 @@ import com.example.moe.finalproject.R;
 public class MainActivity extends AppCompatActivity {
 
     private Button LivingRoom;
-    private Button Kitchen;
-    private Button Home;
-    private Button Automobile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
