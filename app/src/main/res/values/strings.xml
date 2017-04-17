@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Final Project</string>
 
+
+
+
+    <!-- House Settings -->
     <string name="appThree">House Settings</string>
     <string name = "garage_light">Garage Light</string>
     <string name = "garagedoor_openner">Garage Door</string>

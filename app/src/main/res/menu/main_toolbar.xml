@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/living_room"
+        android:title="Living Room"
+        android:icon="@drawable/light"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/kitchen"
+        android:title="Kitchen"
+        android:icon="@drawable/microwave"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/house_setting"
+        android:title="Kitchen"
+        android:icon="@drawable/housesetting"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/garage"
+        android:title="Kitchen"
+        android:icon="@drawable/garage"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/about"
+        android:title="About"
+        android:orderInCategory="101"
+        app:showAsAction="never"/>
+
+
+</menu>
