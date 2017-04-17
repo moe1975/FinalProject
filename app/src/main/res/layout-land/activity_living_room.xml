@@ -8,9 +8,17 @@
     <ListView
         android:id="@+id/roomItems"
         android:layout_width="180dp"
-        android:layout_height="420dp"
+        android:layout_height="250dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/addlivingroomitems" />
+    <Button
+        android:id="@+id/addlivingroomitems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Items"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/livingRoomFrame" />
 
     <FrameLayout
         android:id="@+id/livingRoomFrame"

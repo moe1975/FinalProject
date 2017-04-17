@@ -1,12 +1,12 @@
 package com.moe.finalproject;
 
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +31,10 @@ public class Light2 extends Fragment {
     private Button lightStatus;
     private Button quitLightApp;
     private boolean status = false;
+    private DatabaseHelper dbHelper;
+
+    private int light2_status;
+    private int light2_dimlevel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,11 +44,27 @@ public class Light2 extends Fragment {
 
         View v = inflater.inflate(R.layout.activity_light2, container, false);
 
+        final long device_id = Long.parseLong(data.getString("id"));
+
+        dbHelper = new DatabaseHelper(getActivity());
+
+        Cursor cursor = dbHelper.getL2status(device_id);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            light2_status = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.COLUMN_LIVINGROOM_LIGHT2_DEVICE_STATUS));
+            light2_dimlevel = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.COLUMN_LIVINGROOM_LIGHT2_DEVICE_DIM_LEVEL));
+
+            cursor.moveToNext();
+        }
+
         SeekBar seek = (SeekBar)v.findViewById(R.id.light2Seek);
 
         image = (ImageView) v.findViewById(R.id.lampsImage);
 
-        image.setImageDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), getResources().getIdentifier(data.getString("itemImage"), null, getActivity().getPackageName())));
+       //image.setImageDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), getResources().getIdentifier(data.getString("itemImage"), null, getActivity().getPackageName())));
+
+        seek.setProgress(light2_dimlevel);
 
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progress = 0;
@@ -52,6 +72,7 @@ public class Light2 extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
                 image.setImageBitmap(SetBrightness(BitmapFactory.decodeResource(getResources(), R.drawable.lamp), progresValue));
+                light2_dimlevel = progresValue;
             }
 
             @Override
@@ -61,9 +82,12 @@ public class Light2 extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                dbHelper.saveL2dimlevel(device_id, light2_dimlevel);
             }
         });
+
+
+
         lampText = (TextView) v.findViewById(R.id.switchLamp);
         lampText.setText("ID: " + data.getString("id") + " LIGHT OFF ");
 
@@ -71,21 +95,35 @@ public class Light2 extends Fragment {
         quitLightApp = (Button) v.findViewById(R.id.quitLightButton);
 
 
+
+
+
+        if(light2_status == 0) {
+            lampText.setText("ID: " + data.getString("id") + " THE LIGHT IS OFF");
+            lightStatus.setText("TURN LIGHT ON");
+        } else {
+            lampText.setText("ID: " + data.getString("id") + " THE LIGHT IS ON");
+            lightStatus.setText("TURN LIGHT OFF");
+        }
+
         lightStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!status) {
-                    Toast.makeText(getActivity().getApplicationContext(), " LIGHT IS ON", Toast.LENGTH_SHORT).show();
-                    lampText.setText("ID: " + data.getString("id") + " LIGHT ON");
-                    lightStatus.setText("LIGHT OFF");
+                if(!status) {
+                    Toast.makeText(getActivity().getApplicationContext(), "THE LIGHT IS ON", Toast.LENGTH_SHORT).show();
+                    lampText.setText("ID: " + data.getString("id") + " THE LIGHT IS ON");
+                    lightStatus.setText("TURN LIGHT OFF");
+                    dbHelper.saveL2status(1, device_id);
                 } else {
-                    Toast.makeText(getActivity().getApplicationContext(), "You turned the light OFF", Toast.LENGTH_SHORT).show();
-                    lampText.setText("ID: " + data.getString("ID") + " LIGHT OFF");
-                    lightStatus.setText("SWITCH LIGHT ON");
+                    Toast.makeText(getActivity().getApplicationContext(), "THE LIGHT IS OFF", Toast.LENGTH_SHORT).show();
+                    lampText.setText("ID: " + data.getString("id") + " THE LIGHT IS OFF");
+                    lightStatus.setText("TURN LIGHT ON");
+                    dbHelper.saveL2status(0, device_id);
                 }
                 status = !status;
             }
         });
+
 
         quitLightApp.setOnClickListener(new View.OnClickListener() {
             @Override

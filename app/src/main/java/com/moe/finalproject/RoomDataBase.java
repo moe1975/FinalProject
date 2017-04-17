@@ -6,7 +6,7 @@ package com.moe.finalproject;
 
 
 public class RoomDataBase {
-    private int _id;
+    private long _id;
     private String title;
     private String image;
 
@@ -25,14 +25,14 @@ public class RoomDataBase {
         this.image = "";
     }
 
-    public RoomDataBase(int _id, String title, String image, int deviceType) {
+    public RoomDataBase(long _id, String title, String image, int deviceType) {
         this._id = _id;
         this.title = title;
         this.image = image;
         this.deviceType = deviceType;
     }
 
-    public int get_id() {
+    public long get_id() {
         return _id;
     }
 

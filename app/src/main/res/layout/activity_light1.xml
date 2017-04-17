@@ -9,7 +9,7 @@
         android:id="@+id/lampsImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/blind" />
+        app:srcCompat="@drawable/light" />
 
     <TextView
         android:id="@+id/lampsText"

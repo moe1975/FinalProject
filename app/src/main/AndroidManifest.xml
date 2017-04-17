@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.moe.finalproject">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -9,8 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name="com.moe.finalproject.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,17 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.moe.finalproject.LivingRoom"></activity>
+        <activity android:name="com.moe.finalproject.LivingRoom" />
         <activity android:name="com.moe.finalproject.TVDetails" />
-        <activity android:name="com.moe.finalproject.LightDetails" />
         <activity android:name="com.moe.finalproject.BlindingDetails" />
-        <activity android:name="com.mohibhero.finalproject.HouseSettings"></activity>
-        <activity android:name="com.mohibhero.finalproject.GarageDoor"></activity>
-        <activity android:name="com.mohibhero.finalproject.Temperature"></activity>
-        <activity android:name="com.mohibhero.finalproject.WeatherForecast"></activity>
+        <activity android:name="com.mohibhero.finalproject.HouseSettings" />
+        <activity android:name="com.mohibhero.finalproject.GarageDoor" />
+        <activity android:name="com.mohibhero.finalproject.Temperature" />
+        <activity android:name="com.mohibhero.finalproject.WeatherForecast" />
         <activity android:name="com.emad.finalproject.Kitchen" />
         <activity android:name="com.emad.finalproject.KitchenFridge" />
-        <activity android:name="com.emad.finalproject.KitchenMicrowave"></activity>
+        <activity android:name="com.emad.finalproject.KitchenMicrowave" />
+        <activity android:name="com.moe.finalproject.Light2Details" />
+        <activity android:name="com.moe.finalproject.Light3Details" />
+        <activity android:name="com.moe.finalproject.Light1Details"></activity>
     </application>
 
 </manifest>

@@ -1,52 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_tv"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="400dp"
+    android:layout_height="500dp"
+    android:background="@drawable/tv2"
+    android:weightSum="1">
 
-
-    <ImageView
-        android:id="@+id/tvImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/blind" />
+<RelativeLayout
+    android:layout_width="400dp"
+    android:layout_height="400dp"
+    android:layout_weight="1.63">
 
     <TextView
         android:id="@+id/tvText"
-        android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_width="270dp"
+        android:layout_height="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
         android:gravity="center_vertical"
         android:text=""
         android:textAlignment="center"
-        android:textSize="24dp"
-        android:layout_below="@+id/addChannel"
-        android:layout_alignParentStart="true" />
+        android:textSize="24dp" />
 
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:background="@drawable/remote_control"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/tvText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp">
+
+
+    </ImageView>
 
     <Button
-        android:id="@+id/addChannel"
+        android:id="@+id/power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Channel"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/channelTitle"
-        android:layout_toEndOf="@+id/channelTitle"
-        android:layout_alignTop="@+id/channelTitle" />
+        android:layout_alignTop="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/empty" />
 
-    <EditText
-        android:id="@+id/channelTitle"
-        android:layout_width="250dp"
-        android:layout_height="58dp"
-        android:ems="10"
-        android:hint="Enter Channel Name"
-        android:inputType="textPersonName"
-        android:text=""
-        android:layout_marginTop="97dp"
-        android:layout_below="@+id/tvImage" />
+    <Button
+        android:id="@+id/CH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/power"
+        android:layout_marginTop="22dp"
+        android:layout_toStartOf="@+id/power"
+        android:background="@drawable/empty" />
 
+    <Button
+        android:id="@+id/CH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CH1"
+        android:layout_toEndOf="@+id/CH1"
+        android:background="@drawable/empty" />
 
+    <Button
+        android:id="@+id/CH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CH2"
+        android:layout_toEndOf="@+id/CH2"
+        android:background="@drawable/empty" />
 
+    <Button
+        android:id="@+id/CH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CH1"
+        android:layout_toStartOf="@+id/CH2"
+        android:background="@drawable/empty" />
+
+    <Button
+        android:id="@+id/CH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CH2"
+        android:layout_toEndOf="@+id/CH4"
+        android:background="@drawable/empty" />
+
+    <Button
+        android:id="@+id/CH6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CH3"
+        android:layout_toEndOf="@+id/CH2"
+        android:background="@drawable/empty" />
+
+    <Button
+        android:id="@+id/VolUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/CH4"
+        android:layout_below="@+id/CH4"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/empty" />
+
+    <Button
+        android:id="@+id/VolDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/VolUp"
+        android:layout_below="@+id/VolUp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/empty" />
+
+    <Button
+        android:id="@+id/ChUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/VolDown"
+        android:layout_toEndOf="@+id/CH5"
+        android:background="@drawable/empty" />
+
+    <Button
+        android:id="@+id/ChDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ChUp"
+        android:layout_alignTop="@+id/VolDown"
+        android:background="@drawable/empty" />
+
+    <Button
+        android:id="@+id/Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/VolDown"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:background="@drawable/empty" />
 </RelativeLayout>
+    </LinearLayout>

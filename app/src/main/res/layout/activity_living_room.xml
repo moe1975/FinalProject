@@ -9,8 +9,16 @@
     <ListView
         android:id="@+id/roomItems"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="500dp" />
 
+    <Button
+        android:id="@+id/addlivingroomitems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Items"
+        android:layout_below="@+id/roomItems"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

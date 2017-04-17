@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
 
     <ImageView
@@ -22,20 +23,6 @@
         android:textAlignment="center"
         android:textSize="24dp" />
 
-    <Button
-        android:id="@+id/Curtain1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Open "
-        android:textColor="@color/colorPrimaryDark" />
-
-    <Button
-        android:id="@+id/Curtain2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Close "
-        android:textColor="@color/colorPrimary" />
-
     <ProgressBar
         android:id="@+id/progressLivingroomBar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -46,6 +33,12 @@
         tools:visibility="visible">
 
     </ProgressBar>
+
+    <Switch
+        android:id="@+id/blindingswitch"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:text="Blind ON/OFF" />
 
 
 </LinearLayout>

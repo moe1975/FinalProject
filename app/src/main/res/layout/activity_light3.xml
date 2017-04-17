@@ -7,27 +7,15 @@
 
 
     <ImageView
-        android:id="@+id/lampImage"
-        android:layout_width="78dp"
-        android:layout_height="79dp"
+        android:id="@+id/lampsImage"
+        android:layout_width="146dp"
+        android:layout_height="139dp"
         app:srcCompat="@drawable/lamp" />
-
-    <ImageView
-        android:id="@+id/bluelightImage"
-        android:layout_width="76dp"
-        android:layout_height="61dp"
-        app:srcCompat="@drawable/bluelight" />
-
-    <ImageView
-        android:id="@+id/yellowlightImage"
-        android:layout_width="77dp"
-        android:layout_height="80dp"
-        app:srcCompat="@drawable/yellowlight" />
 
     <TextView
         android:id="@+id/lampsText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200px"
         android:gravity="center_vertical"
         android:text=""
         android:textAlignment="center"
@@ -36,27 +24,27 @@
     <Button
         android:id="@+id/switchLamp"
         android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:text="TURN LIGHT ON"
-        android:layout_weight="0.04" />
+        android:layout_height="wrap_content"
+        android:text="TURN LIGHT ON" />
 
     <Button
         android:id="@+id/quitLightButton"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Quit Light App"
-        android:layout_weight="0.07" />
+        android:layout_height="wrap_content"
+        android:text="Quit Light App" />
 
-    <Button
-        android:id="@+id/bluelight"
+    <SeekBar
+        android:id="@+id/light3Seek"
         android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text="TURN LIGHT TO BLUE" />
+        android:layout_height="wrap_content"
+        android:layout_weight="0.32" />
 
-    <Button
-        android:id="@+id/yellowlight"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text="TURN LIGHT TO YELLOW" />
+    <Switch
+        android:id="@+id/changeColor"
+        android:layout_width="278dp"
+        android:layout_height="wrap_content"
+        android:text="Change Light Color"
+        android:textOn="Change Light Color To Blue" />
+
 
 </LinearLayout>

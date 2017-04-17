@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/addlivingtv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tv" />
+
+    <Button
+        android:id="@+id/addlivinglight1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="light1" />
+
+    <Button
+        android:id="@+id/addlivinglight2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="light2" />
+
+    <Button
+        android:id="@+id/addlivinglight3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="light3" />
+
+    <Button
+        android:id="@+id/addblinding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="blinding" />
+</LinearLayout>

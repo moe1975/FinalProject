@@ -1,25 +1,28 @@
 package com.moe.finalproject;
 
-/**
- * Created by Moe on 2017-04-06.
- */
-
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.mohibhero.finalproject.ProjectDatabaseHelper;
-
+/**
+ * Created by Moe on 4/14/2017.
+ */
 
 public class BaseActivity extends AppCompatActivity {
-    ProjectDatabaseHelper dbHelper;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        dbHelper = new ProjectDatabaseHelper(this);
-    }
+    DatabaseHelper dbHelper;
 
-    public ProjectDatabaseHelper getDbHelper() { return  dbHelper; }
+
+        @Override
+        protected void onCreate(Bundle saveInstanceState){
+
+            super.onCreate(saveInstanceState);
+            dbHelper = new DatabaseHelper(this);
+
+        }
+
+        public DatabaseHelper getDbHelper(){
+
+            return dbHelper;
+        }
 
 }
