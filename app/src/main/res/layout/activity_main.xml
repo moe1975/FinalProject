@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="@mipmap/ic_launcher">
+    android:background="@drawable/mainbackground">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/main_activity_toolbar"

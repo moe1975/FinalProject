@@ -16,6 +16,7 @@
     android:orientation="vertical"
     tools:context="com.mohibhero.finalproject.WeatherForecastFragment"
     android:weightSum="1"
+    android:background="@drawable/weatherbackground"
     >
 
     <ImageView
